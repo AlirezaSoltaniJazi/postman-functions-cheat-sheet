@@ -1,7 +1,7 @@
 /**
  * Convert timestamps to formatted dates
  * @param {...number} timestamps The timestamps to convert
- * @param {boolean} [verbose=false] Whether to log messages to the console
+ * @param {boolean} [verbose=false] Optional. If true, the function logs the validation process and errors.
  */
 let timestampToDate = (verbose = false, ...timestamps) => {
     if (verbose) console.log('Timestamp to date started!');

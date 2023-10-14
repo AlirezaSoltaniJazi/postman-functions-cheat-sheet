@@ -2,7 +2,7 @@
  * Set variables in a specified scope
  * @param {Object} variables An object containing variable names and values
  * @param {string} variableScope The scope in which to set the variables: e (environment), c (collection), or g (globals)
- * @param {boolean} [verbose=false] Whether to log messages to the console
+ * @param {boolean} [verbose=false] Optional. If true, the function logs the validation process and errors.
  */
 let setVariables = (variables, variableScope, verbose = false) => {
     const environmentScope = ['e', 'environment', 'env'];

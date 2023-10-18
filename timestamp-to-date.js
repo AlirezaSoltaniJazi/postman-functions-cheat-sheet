@@ -1,11 +1,15 @@
 /**
  * Convert timestamps to formatted dates
  * @param {...number} timestamps The timestamps to convert
- * @param {boolean} [verbose=false] Optional. If true, the function logs the validation process and errors.
+ * @param {boolean} [verbose=false] Whether to log messages to the console
  */
-let timestampToDate = (verbose = false, ...timestamps) => {
+let timestampToDate = (verbose, ...timestamps) => {
     if (verbose) console.log('Timestamp to date started!');
     timestamps.forEach((timestamp, index) => {
+        // Check if timestamp is in milliseconds
+        if (timestamp.toString().length > 10) {
+            timestamp = timestamp / 1000;
+        }
         const date = new Date(timestamp * 1000);
         const formattedDate = date.toLocaleDateString('en-GB', {
             year: 'numeric',
@@ -19,4 +23,4 @@ let timestampToDate = (verbose = false, ...timestamps) => {
     });
     if (verbose) console.log('Timestamp to date ended!');
 }
-pm.environment.set('function_timestamp_to_Date', timestampToDate.toString())
+pm.environment.set('function_timestamp_to_date', timestampToDate.toString())
